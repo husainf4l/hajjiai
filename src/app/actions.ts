@@ -1,7 +1,5 @@
 'use server';
 
-import { act } from "react";
-
 /**
  * Server action to send a message to n8n webhook
  * @param message The message text to send

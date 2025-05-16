@@ -122,7 +122,7 @@ export const FormatMessage = ({ text }: FormatMessageProps) => {
   // Process and identify table sections
   let tableLines: string[] = [];
   let inTable = false;
-  let processedContent: React.ReactNode[] = [];
+  const processedContent: React.ReactNode[] = [];
 
   // Process lines to identify tables and other content
   lines.forEach((line, i) => {
