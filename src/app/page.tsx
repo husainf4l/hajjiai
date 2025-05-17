@@ -21,7 +21,7 @@ export default function Home() {
               d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <span>Prototype access closes at 4:00 PM for security maintenance</span>
+          <span>The prototype will be permanently closed at 4:00 PM for security reasons</span>
         </div>
       </header>
 
@@ -174,8 +174,8 @@ export default function Home() {
                 />
               </svg>
               <span>
-                This prototype will be closed at 4:00 PM for security
-                maintenance updates
+                Due to security protocols, this prototype will be permanently
+                discontinued at 4:00 PM today
               </span>
             </p>
           </div>
