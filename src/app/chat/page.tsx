@@ -8,6 +8,7 @@ import { FormatMessage } from "../components/ChatArea/ChatArea";
 import Spinner from "../components/Spinner/Spinner";
 import { ThinkingAnimation } from "../components/LoadingIndicator";
 import { ScrollToBottomButton } from "../components/ScrollToBottom";
+import PasswordPrompt from "../components/Auth/PasswordPrompt";
 
 export default function ChatPage() {
   const [message, setMessage] = useState("");
@@ -16,6 +17,8 @@ export default function ChatPage() {
   >([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authError, setAuthError] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -143,6 +146,19 @@ export default function ChatPage() {
       }
     }
   };
+
+  const handlePasswordSubmit = (password: string) => {
+    if (password === 'tt55oo77') {
+      setIsAuthenticated(true);
+      setAuthError('');
+    } else {
+      setAuthError('Incorrect password. Please try again.');
+    }
+  };
+
+  if (!isAuthenticated) {
+    return <PasswordPrompt onSubmit={handlePasswordSubmit} error={authError} />;
+  }
 
   return (
     <div className="flex h-screen max-h-screen overflow-hidden">
