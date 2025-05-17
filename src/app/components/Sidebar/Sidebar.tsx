@@ -11,12 +11,13 @@ export default function Sidebar() {
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-10 lg:hidden"
           onClick={() => setIsCollapsed(true)}
+          style={{ top: "60px" }}
         />
       )}
 
       {/* Mobile toggle button */}
       <button
-        className="fixed top-4 left-4 z-20 p-2 rounded-md bg-[#121215] text-white lg:hidden"
+        className="fixed top-4 left-4 z-30 p-2 rounded-md bg-[#121215] text-white lg:hidden"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
         <svg
@@ -39,11 +40,11 @@ export default function Sidebar() {
       <div
         className={`fixed inset-y-0 left-0 transform ${
           isCollapsed ? "-translate-x-full" : "translate-x-0"
-        } lg:relative lg:translate-x-0 w-64 bg-[#121215] text-white flex flex-col z-10 transition-transform duration-300 ease-in-out`}
+        } lg:relative lg:translate-x-0 w-64 bg-[#121215] text-white flex flex-col z-20 transition-transform duration-300 ease-in-out mt-14 lg:mt-0`}
       >
         <div className="p-4 border-b border-gray-800 flex justify-between items-center">
           <Link href="/" className="text-xl font-bold">
-            Albilsan
+            Al Balsan
           </Link>
           <button
             className="p-2 rounded-md bg-[#1c1e26] lg:hidden"

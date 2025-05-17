@@ -154,7 +154,9 @@ export default function ChatPage() {
         <div className="max-w-5xl w-full flex flex-col flex-1 h-full">
           {/* Mobile header - only visible on mobile */}
           <div className="bg-[#121215] p-4 text-white shadow-md flex-shrink-0 flex items-center justify-between lg:hidden">
-            <h1 className="text-xl font-bold">Chat</h1>
+            <div className="w-8"></div>{" "}
+            {/* Empty space to balance the header */}
+            <h1 className="text-xl font-bold text-center">Chat</h1>
             <Link
               href="/"
               className="text-gray-400 hover:text-white transition-colors"

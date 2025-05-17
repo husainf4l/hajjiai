@@ -4,12 +4,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#2d3142] flex flex-col">
       {/* Header */}
-      <header className="bg-[#121215] p-4 text-white shadow-md flex items-center justify-between">
-        <h1 className="text-xl font-bold">Albilsan Group | Chat Prototype</h1>
+      <header className="bg-[#121215] p-4 text-white shadow-md flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h1 className="text-xl font-bold">Al Balsan Group | Chat Prototype</h1>
         <div className="flex items-center text-sm text-gray-400">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 mr-1"
+            className="h-4 w-4 mr-1 flex-shrink-0"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -26,10 +26,10 @@ export default function Home() {
       </header>
 
       {/* Main content */}
-      <main className="flex-1 flex flex-col items-center justify-center p-8">
+      <main className="flex-1 flex flex-col items-center justify-center p-4 sm:p-8">
         <div className="max-w-3xl w-full bg-[#1c1e26] rounded-lg shadow-xl overflow-hidden scale-in">
           {/* Hero section */}
-          <div className="p-8 text-center">
+          <div className="p-4 sm:p-8 text-center">
             <div className="flex justify-center mb-6">
               <div className="relative w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center animate-pulse">
                 <svg
@@ -49,11 +49,11 @@ export default function Home() {
                 <span className="absolute -top-1 -right-1 bg-green-500 rounded-full w-4 h-4 border-2 border-[#1c1e26]"></span>
               </div>
             </div>
-            <h1 className="text-3xl font-bold text-white mb-4 fade-in">
-              Welcome to the Albilsan Group Chat
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-4 fade-in">
+              Welcome to the Al Balsan Group Chat
             </h1>
             <p
-              className="text-gray-400 text-lg mb-8 fade-in"
+              className="text-gray-400 text-base sm:text-lg mb-8 fade-in"
               style={{ animationDelay: "0.1s" }}
             >
               This prototype demonstrates our interactive chat interface with
@@ -69,9 +69,9 @@ export default function Home() {
           </div>
 
           {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-700">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 p-2 md:p-0 divide-y md:divide-y-0 md:divide-x divide-gray-700">
             <div
-              className="p-6 text-center slide-in-right"
+              className="p-4 md:p-6 text-center slide-in-right"
               style={{ animationDelay: "0.1s" }}
             >
               <div className="bg-[#121215] rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
@@ -90,15 +90,15 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                 Data Visualization
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-sm md:text-base">
                 Interactive tables and formatted data presentation
               </p>
             </div>
             <div
-              className="p-6 text-center slide-in-right"
+              className="p-4 md:p-6 text-center slide-in-right"
               style={{ animationDelay: "0.2s" }}
             >
               <div className="bg-[#121215] rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
@@ -117,15 +117,15 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                 Real-time Chat
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-sm md:text-base">
                 Smooth scrolling and animated chat interactions
               </p>
             </div>
             <div
-              className="p-6 text-center slide-in-right"
+              className="p-4 md:p-6 text-center slide-in-right"
               style={{ animationDelay: "0.3s" }}
             >
               <div className="bg-[#121215] rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
@@ -144,10 +144,10 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                 Sales Reports
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-sm md:text-base">
                 Analytics and formatted business insights
               </p>
             </div>
@@ -155,13 +155,13 @@ export default function Home() {
 
           {/* Notice */}
           <div
-            className="p-6 bg-[#121215] text-center fade-in"
+            className="p-4 md:p-6 bg-[#121215] text-center fade-in"
             style={{ animationDelay: "0.5s" }}
           >
-            <p className="text-yellow-300 flex items-center justify-center">
+            <p className="text-yellow-300 flex flex-wrap items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-2"
+                className="h-5 w-5 mr-2 flex-shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -173,7 +173,10 @@ export default function Home() {
                   d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
                 />
               </svg>
-              This prototype will be closed at 4:00 PM for scheduled maintenance
+              <span>
+                This prototype will be closed at 4:00 PM for scheduled
+                maintenance
+              </span>
             </p>
           </div>
         </div>
@@ -181,7 +184,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-[#121215] p-4 text-center text-gray-500 text-sm">
-        <p>© 2025 Albilsan Group - Prototype Version 1.0.0</p>
+        <p>© 2025 Al Balsan Group - Prototype Version 1.0.0</p>
       </footer>
     </div>
   );

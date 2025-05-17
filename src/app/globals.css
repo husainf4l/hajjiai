@@ -123,6 +123,22 @@ body {
   animation: scaleIn 0.4s ease-out forwards;
 }
 
+/* Responsive table styles */
+@media (max-width: 640px) {
+  /* Make tables scroll horizontally on small screens */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Adjust cell padding on mobile */
+  td, th {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

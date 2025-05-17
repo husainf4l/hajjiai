@@ -68,7 +68,7 @@ const formatTable = (tableText: string[]): React.ReactNode => {
 
   return (
     <div className="my-4 overflow-auto max-h-[500px] border border-gray-700 rounded custom-scrollbar transform transition-opacity duration-300 hover:border-gray-500">
-      <table className="min-w-full divide-y divide-gray-700">
+      <table className="min-w-full divide-y divide-gray-700 table-auto">
         <thead className="bg-gray-800 sticky top-0">
           <tr>
             {headers.map((header, i) => (
@@ -93,7 +93,7 @@ const formatTable = (tableText: string[]): React.ReactNode => {
               {row.map((cell, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className={`px-3 py-2 whitespace-nowrap text-sm border-r border-gray-700 last:border-r-0 text-center ${
+                  className={`px-3 py-2 text-sm border-r border-gray-700 last:border-r-0 text-center whitespace-normal sm:whitespace-nowrap ${
                     // Add color for monetary values
                     cell.includes("IQD") ||
                     cell.includes("$") ||
@@ -431,7 +431,7 @@ export default function ChatArea({
   return (
     <div className="flex-1 flex flex-col bg-[#2d3142] overflow-hidden h-screen">
       {/* Header */}
-      <header className="bg-[#121215] p-4 text-white shadow-md flex-shrink-0">
+      <header className="bg-[#121215] p-4 text-white shadow-md flex-shrink-0 flex items-center justify-center">
         <h1 className="text-xl font-bold">Chat</h1>
       </header>
 
