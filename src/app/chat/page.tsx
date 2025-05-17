@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import Link from "next/link";
 import Sidebar from "../components/Sidebar/Sidebar";
 import { sendMessageToWebhook } from "../actions";
 import { FormatMessage } from "../components/ChatArea/ChatArea";
@@ -149,8 +150,31 @@ export default function ChatPage() {
       <Sidebar />
 
       {/* Main chat area */}
-      <div className="flex-1 flex flex-col items-center bg-[#2d3142] overflow-hidden">
+      <div className="flex-1 flex flex-col items-center bg-[#2d3142] overflow-hidden w-full">
         <div className="max-w-5xl w-full flex flex-col flex-1 h-full">
+          {/* Mobile header - only visible on mobile */}
+          <div className="bg-[#121215] p-4 text-white shadow-md flex-shrink-0 flex items-center justify-between lg:hidden">
+            <h1 className="text-xl font-bold">Chat</h1>
+            <Link
+              href="/"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                />
+              </svg>
+            </Link>
+          </div>
           {/* Chat messages area */}
           <div
             className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar"

@@ -86,7 +86,9 @@ const formatTable = (tableText: string[]): React.ReactNode => {
           {rows.map((row, rowIndex) => (
             <tr
               key={rowIndex}
-              className={`${rowIndex % 2 === 0 ? "bg-gray-900" : "bg-gray-800"} hover:bg-gray-700 transition-colors duration-150`}
+              className={`${
+                rowIndex % 2 === 0 ? "bg-gray-900" : "bg-gray-800"
+              } hover:bg-gray-700 transition-colors duration-150`}
             >
               {row.map((cell, cellIndex) => (
                 <td
@@ -405,9 +407,9 @@ export default function ChatArea({
     const handleScroll = () => {
       const { scrollTop, scrollHeight, clientHeight } = chatContainer;
       const isNearBottom = scrollHeight - scrollTop - clientHeight < 100;
-      
+
       setShowScrollButton(!isNearBottom);
-      
+
       if (isNearBottom) {
         isUserScrollingRef.current = false;
       } else {
@@ -415,8 +417,8 @@ export default function ChatArea({
       }
     };
 
-    chatContainer.addEventListener('scroll', handleScroll);
-    return () => chatContainer.removeEventListener('scroll', handleScroll);
+    chatContainer.addEventListener("scroll", handleScroll);
+    return () => chatContainer.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Scroll to bottom when messages change
@@ -434,7 +436,10 @@ export default function ChatArea({
       </header>
 
       {/* Chat messages area - This will flex and scroll */}
-      <div className="flex-1 overflow-y-auto custom-scrollbar relative" ref={chatContainerRef}>
+      <div
+        className="flex-1 overflow-y-auto custom-scrollbar relative"
+        ref={chatContainerRef}
+      >
         <div className="p-4 pb-2 space-y-4 min-h-full">
           {messages.length === 0 ? (
             <div className="flex items-center justify-center h-full min-h-[50vh]">
@@ -455,7 +460,9 @@ export default function ChatArea({
             ))
           )}
           {/* Add extra space after messages to allow scrolling past the last message */}
-          {messages.length > 0 && <div className="h-4" ref={messagesEndRef}></div>}
+          {messages.length > 0 && (
+            <div className="h-4" ref={messagesEndRef}></div>
+          )}
         </div>
       </div>
 
